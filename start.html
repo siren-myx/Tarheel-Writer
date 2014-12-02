@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    </head>
+    <body>
+	<nav id="nav01" class ="navbar navbar-inverse"></nav>
+	<div class="container">
+            <div class="jumbotron">
+                <h1 style="text-align: center">Getting Started</h1>
+                <p style="text-align: center">Select the essay type and number of body paragraphs you will use</p>
+            </div>
+        </div>
+        <div id="outline" class="container">
+                <p>Expository: description</p>
+		<p>Descriptive: description</p>
+		<p>Narrative: description</p>
+		<p>Argumentative: description</p>
+        </div>
+
+	<div class="container">
+        	<form action="outline.php" method="post">
+			<div>
+				<label> Essay type </label>
+            			<select class="form-control" name="style">
+                			<option value="expository">Expository</option>
+                			<option value="descriptive">Descriptive</option>
+                			<option value="narrative">Narrative</option>
+                			<option value="argumentative">Argumentative</option>
+            			</select>
+			</div>
+			<div>
+				<label> Number of body paragraphs </label>
+            			<input class="form-control" type="number" name="quantity" min="1" max="10">
+			</div>
+           	</form>
+	</div>
+	<script src="header.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

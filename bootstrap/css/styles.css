@@ -99,11 +99,8 @@ body {
 }
 
 article h2{color:#333333;}
- h2, h3, h4 {color:#56A0D3;}
 
-#divfont {
-color:white;
-}
+h1, h2, h3, h4 {color:#56A0D3;}
 
  .margin10{margin-bottom:10px; margin-right:10px;}
 

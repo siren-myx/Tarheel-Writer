@@ -1,9 +1,15 @@
 <?php
-$db = new mysqli('https://classroom.cs.unc.edu/phpMyAdmin/', '', '', 'myxdbz' );
+$servername = "classroom.cs.unc.edu";
+$username = "kjmoon";
+$password = "tGmuBw7GZG7dTN67";
 
-
-if($db->connect_errno) {
-	echo $db->connect_error;
-	//die('Sorry, we are having some problems.')
-}
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+    echo "Connected successfully"; 
+    }
+catch(PDOException $e)
+    {
+    echo $e->getMessage();
+    }
 ?>
+

@@ -1,0 +1,42 @@
+This is the database schema for the project.
+Based on how I am implementing forms for filling out essay
+
+user:
+	id: int (primary key)
+	name: text
+	char: text
+
+essay:
+	uid: int (foreign key of user id)
+	num: int (essay num for that user, increments by 1)
+	name: text
+	type: enum (4 essay types)
+	primary key(uid, num)
+
+body_paragraph:
+	uid: int (foreign key of user id)
+	enumber: int (foreign key of essay num)
+	pnumber: int (body paragraph number of the essay num)
+	transition: text
+	topic: text
+	evidence: text
+	analysis: text
+	closing: text
+	primary key(uid, enumber, pnumber)
+
+introduction:
+	uid: int (foreign key of user id)
+	enumber: int (foreign key of essay num)
+	introduction: text
+	outline: text
+	thesis: text
+	primary key(uid, enumber)
+
+conclusion:
+	uid: int (foreign key of user id)
+	enumber: int (foreign key of essay num)
+	introduction: text
+	restatement: text
+	summary: text
+	final: text
+	primary key(uid, enumber)	

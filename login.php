@@ -59,7 +59,7 @@
             <input type="password" class="form-control input-lg" name="password" placeholder="Password">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Sign In</button>
+            <input class="btn btn-primary btn-lg btn-block" type="submit" name="submit">
             <button class="btn btn-success btn-lg btn-block">Sign Up</button>
             <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
           </div>

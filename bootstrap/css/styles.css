@@ -139,7 +139,8 @@ h1, h2, h3, h4 {color:#56A0D3;}
 }
 
 #useraccount {
-margin-right:0;
+    float: right;
+
 font-size: 20px;
 color:#56A0D3;
 

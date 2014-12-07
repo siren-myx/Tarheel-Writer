@@ -10,12 +10,10 @@
    <?php
    if(isset($_POST["submit"])){
 
-      if(($_POST["password"] == $_POST["cpassword"])){
+      if(($_POST["password"] == $_POST["password_confirmation"])){
 
-         if(!empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+         if(!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password_confirmation'])) {
 
-            $firstname = $_POST['firstname'];
-            $lastname = $_POST['lastname'];
             $email = $_POST['email'];
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -27,7 +25,7 @@
             $numrows=mysql_num_rows($query);
             if($numrows==0)
             {
-               $sql="INSERT INTO Users(firstname,lastname,email,username,password) VALUES('$firstname', '$lastname', '$email', '$username','$password')";
+               $sql="INSERT INTO Users(email,username,password) VALUES('$email', '$username','$password')";
 
                $result=mysql_query($sql);
 
@@ -55,21 +53,6 @@
          <form role="form">
             <h2>Please Sign Up <small>It's free and always will be.</small></h2>
             <hr class="colorgraph">
-            <div class="row">
-               <div class="col-xs-12 col-sm-6 col-md-6">
-                  <div class="form-group">
-                     <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-                  </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-6">
-                  <div class="form-group">
-                     <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-                  </div>
-               </div>
-            </div>
-            <div class="form-group">
-               <input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
-            </div>
             <div class="form-group">
                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
             </div>
@@ -100,7 +83,7 @@
            <hr class="colorgraph">
            <div class="row">
             <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-            <div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+            <div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Sign In</a></div>
          </div>
       </form>
    </div>

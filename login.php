@@ -58,7 +58,7 @@
         <div class="modal-body">
           <form method="post" action="" class="form col-md-12 center-block">
             <div class="form-group">
-              <input type="text" class="form-control input-lg" name="username" placeholder="username">
+              <input type="text" class="form-control input-lg" name="username" placeholder="Username">
             </div>
             <div class="form-group">
               <input type="password" class="form-control input-lg" name="password" placeholder="Password">

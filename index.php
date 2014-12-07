@@ -25,7 +25,7 @@ if(!isset($_SESSION["sess_user"])){
 				        <strong>Tarheel Writer</strong>	
 				        
 				        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-				        <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+				        <a href="essaywriter.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
 
@@ -70,7 +70,7 @@ if(!isset($_SESSION["sess_user"])){
 						<p>Essay Guider</p>
 					</div>
 					<div id="essay_writer" class="col-sm-5">
-						<a id="writer" href="http://wwwp.cs.unc.edu/Courses/comp426-f14/kjmoon/a5/start.html"><img src="./home_files/write_essay.png" width="200" height="200"></a>
+						<a id="writer" href="essaywriter.html"><img src="./home_files/write_essay.png" width="200" height="200"></a>
 						<p>Essay Writer</p>
 					</div>	
 					<div class="col-sm-2"></div>

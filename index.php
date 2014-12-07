@@ -10,7 +10,7 @@ if(!isset($_SESSION["sess_user"])){
 <head>
 	<meta charset="UTF-8">
 	<title>Tarheel Writer</title>
-	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css">	
  </head>
 	
@@ -28,7 +28,7 @@ if(!isset($_SESSION["sess_user"])){
 				        <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
-			    <h4>Welcome <?php echo $_SESSION['sess_user']; ?></h4>
+			    <span>Welcome <?php echo $_SESSION['sess_user']; ?></sapn>
 				<form class="navbar-form navbar-right" role="enter">
 			      	<button type="button" class="btn btn-success" onclick="location.href='login.php'">Sign in</button>
 			        <button type="button" class="btn btn-danger" onclick="location.href='login.php'">Sign up</button>

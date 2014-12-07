@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION["sess_user"])){
 	header("location:login.php");
 } else {
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -101,6 +102,3 @@ if(!isset($_SESSION["sess_user"])){
 	<!-- forth div starts-->	
 </body>
 </html>
-<?php
-}
-?>

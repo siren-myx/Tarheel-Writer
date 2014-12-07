@@ -21,11 +21,11 @@
             $con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67') or die(mysql_error());
             mysql_select_db('kjmoondb') or die("DB Selection Failed");
 
-            $query=mysql_query("SELECT * FROM Users WHERE username='".$username."'");
+            $query=mysql_query("SELECT * FROM Users WHERE email='".$email."'");
             $numrows=mysql_num_rows($query);
             if($numrows==0)
             {
-               $sql="INSERT INTO Users(firstname, lastname,email,username,password) VALUES('$firstname', '$lastname', '$email', '$username','$password')";
+               $sql="INSERT INTO Users(firstname,lastname,email,username,password) VALUES('$firstname', '$lastname', '$email', '$username','$password')";
 
                $result=mysql_query($sql);
 
@@ -35,7 +35,7 @@
                   echo "<center>Failure!</center>";
                }
             } else {
-               echo "<center>That username already exists!</center>";
+               echo "<center>You already have an account!</center>";
             }
          } else {
             echo "<center>All fields are required!</center>";
@@ -49,5 +49,5 @@
    <div>
 
 
-</body>
-</html>
+   </body>
+   </html>

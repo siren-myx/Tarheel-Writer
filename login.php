@@ -2,7 +2,7 @@
   <html>
   <head>
     <title>Tarheel Writer</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./bootstrap/css/styles.css" rel="stylesheet">
   </head>
   <body>

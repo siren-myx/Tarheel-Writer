@@ -19,25 +19,28 @@ if(!isset($_SESSION["sess_user"])){
     <body>
 	<!-- first div starts-->
 	<div id="navigation">
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">								
-					<span class="navbar-barnd">
-						<img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
-				        <strong>Tarheel Writer</strong>	
-				        
-				        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-				        <a href="essaywriter.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
-				  	</span>
-			    </div>
+    <!-- first div starts-->
+    <div id="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">                             
+                    <span class="navbar-barnd">
+                        <img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
+                        <strong>Tarheel Writer</strong> 
+                        
+                        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
+                        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+                    </span>
+                </div>
 
                 <span id="useraccount">Hello, <?php echo $_SESSION['sess_user']; ?></sapn>
                 <img src="./home_files/user.png" height="auto" width="50px">
-			    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">Log Out</button>
-			</div>
-		</nav>
-	</div>
-	<!-- first div ends-->
+                <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">Log Out</button>
+            </div>
+        </nav>
+    </div>
+    <!-- first div ends-->
+
 
     <div class="container"><br>
         <div id="infoboard" class="jumbotron">

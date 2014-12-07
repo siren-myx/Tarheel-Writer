@@ -24,8 +24,8 @@ if(!isset($_SESSION["sess_user"])){
 						<img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
 				        <strong>Tarheel Writer</strong>	
 				        
-				        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-				        <a href="essaywriter.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+				        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
+				        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
 
@@ -66,11 +66,11 @@ if(!isset($_SESSION["sess_user"])){
 				<div class="row"><br><br><br>
 					<div class="col-sm-2"></div>
 					<div id="essay_guider" class="col-sm-5">
-						<a id="guider" href="styleguide.html"><img src="./home_files/paragraph.png" width="200" height="200"></a>
+						<a id="guider" href="styleguide.php"><img src="./home_files/paragraph.png" width="200" height="200"></a>
 						<p>Essay Guider</p>
 					</div>
 					<div id="essay_writer" class="col-sm-5">
-						<a id="writer" href="essaywriter.html"><img src="./home_files/write_essay.png" width="200" height="200"></a>
+						<a id="writer" href="essaywriter.php"><img src="./home_files/write_essay.png" width="200" height="200"></a>
 						<p>Essay Writer</p>
 					</div>	
 					<div class="col-sm-2"></div>

@@ -25,8 +25,8 @@ if(!isset($_SESSION["sess_user"])){
 						<img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
 				        <strong>Tarheel Writer</strong>	
 				        
-				        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-				        <a href="essaywriter.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+				        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
+				        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
 

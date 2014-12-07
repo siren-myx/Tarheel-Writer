@@ -56,7 +56,7 @@ if(!isset($_SESSION["sess_user"])){
 
         <div id="body" class="jumbotron">
             <div id="outline" class="row col-lg-12 input-group">
-                <input id="out" type="text" class="form-control" placeholder="Number of body paragraphs">
+                <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
                 <span class="input-group-addon" onclick="outline()">Click</span>
             </div><br>
         </div>

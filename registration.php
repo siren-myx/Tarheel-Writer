@@ -10,9 +10,7 @@
 <body>
 
  <?php
-echo "Hello!!";
  if(isset($_POST['submit'])){
-    echo "SUBMITTED!!";
   if(($_POST['password'] == $_POST['password_confirmation'])){
 
    if(!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password_confirmation'])) {
@@ -20,7 +18,6 @@ echo "Hello!!";
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    echo $email;
 
     $con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67') or die(mysql_error());
     mysql_select_db('kjmoondb') or die("DB Selection Failed");
@@ -30,9 +27,7 @@ echo "Hello!!";
     if($numrows==0)
     {
      $sql="INSERT INTO Users(email, username, password) VALUES ('$email', '$username','$password')";
-     echo "Added the entry !";
      $result=mysql_query($sql);
-
      if($result){
       session_start();
       $_SESSION['sess_user']=$username;

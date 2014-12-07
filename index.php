@@ -31,7 +31,7 @@ if(!isset($_SESSION["sess_user"])){
 
                 <span id="useraccount">Hello, <?php echo $_SESSION['sess_user']; ?></sapn>
                 <img src="./home_files/user.png" height="auto" width="50px">
-			    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">exit</button>
+			    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">Log Out</button>
 			</div>
 		</nav>
 	</div>

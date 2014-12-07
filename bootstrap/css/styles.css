@@ -141,8 +141,32 @@ h1, h2, h3, h4 {color:#56A0D3;}
 
 #useraccount {
     float: right;
+    font-size: 20px;
+    color:#56A0D3;
 
-font-size: 20px;
-color:#56A0D3;
+}
+
+#infoboard, #title, #body {
+    background:#56A0D3;
+    color:#f5f5f5;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    
+}
+
+#title {
+    background:#56A0D3;
+    color:#f5f5f5;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+}
+
+#outline {
+    margin-left:auto;
+    margin-right: auto;
 
 }

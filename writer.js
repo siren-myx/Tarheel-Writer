@@ -1,14 +1,4 @@
-
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <script>
-            var num_paragraphs;
+var num_paragraphs;
 
             //for introduction
             var introduction;
@@ -236,26 +226,3 @@
                 document.getElementById("outline").innerHTML = '<textarea id="essay"></textarea>';
                 document.getElementById("essay").value = essay;
             }
-        </script>
-    </head>
-    <body>
-	<nav id="nav01" class ="navbar navbar-inverse"></nav>
-	<div class="container">
-            <div class="jumbotron">
-                <h1 style="text-align: center" id="header">Getting Started</h1>
-                <p style="text-align: center" id="description">Select the essay type and number of body paragraphs you will use</p>
-            </div>
-        </div>
-
-	<div class="container" id="outline">
-			<div>
-				<label> Number of body paragraphs </label>
-            	    <input id="out" type="number" name="paragraphs" min="1" max="10" step="1" value="3">
-                    <button onclick="outline()">Submit</button>
-			</div>
-           	</form>
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    </body>
-</html>

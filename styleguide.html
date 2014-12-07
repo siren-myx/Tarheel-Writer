@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION["sess_user"])){
+    header("location:login.php");
+} else {
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,25 +16,26 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
 
 <body>
-	<!-- First div for navigation -->
-	<div id="navigation">
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">								
-					<span class="navbar-barnd">
-						<img src="./home_files/unc_icon.png" style="margin-top:0.9%; width:10%">
-				        <strong>Tarheel Writer</strong>	
-				        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>
-				         <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>       
-				  	</span>
-			    </div>
-				<form class="navbar-form navbar-right" role="enter">
-			      	<button type="button" class="btn btn-success" onclick="location.href='login.html'">Sign in</button>
-			        <button type="button" class="btn btn-danger" onclick="location.href='login.html'">Sign up</button>
-	      		</form>
-			</div>
-		</nav>
-	</div>
+    <!-- first div starts-->
+    <div id="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">                             
+                    <span class="navbar-barnd">
+                        <img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
+                        <strong>Tarheel Writer</strong> 
+                        
+                        <a href="styleguide.html"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
+                        <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+                    </span>
+                </div>
+
+                <span id="useraccount">Hello, <?php echo $_SESSION['sess_user']; ?></sapn>
+                <img src="./home_files/user.png" height="auto" width="50px">
+                <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">Log Out</button>
+            </div>
+        </nav>
+    </div>
 
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">

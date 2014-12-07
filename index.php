@@ -28,7 +28,7 @@ if(!isset($_SESSION["sess_user"])){
 				        <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
-			    <h4>Welcome <?php echo $_SESSION['sess_user']; ?></h4>
+			    <h4>Welcome <?php echo $_SESSION['sess_user']; ?> <a href="logout.php">Logout</a></h4>
 				<form class="navbar-form navbar-right" role="enter">
 			      	<button type="button" class="btn btn-success" onclick="location.href='login.php'">Sign in</button>
 			        <button type="button" class="btn btn-danger" onclick="location.href='login.php'">Sign up</button>

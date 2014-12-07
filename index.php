@@ -28,23 +28,10 @@ if(!isset($_SESSION["sess_user"])){
 				        <a href="writer.html"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
 				  	</span>
 			    </div>
-<<<<<<< HEAD
+
                 <span id="useraccount">Hello, <?php echo $_SESSION['sess_user']; ?></sapn>
                 <img src="./home_files/user.png" height="auto" width="50px">
 			    <button type="button" class="btn btn-danger btn-sm" onclick="location.href='logout.php'">exit</button>
-
-				<!--<form class="navbar-form navbar-right" role="enter">
-=======
-<<<<<<< HEAD
-			    <h4>Welcome <?php echo $_SESSION['sess_user']; ?> <a href="logout.php">Logout</a></h4>
-=======
-			    <span>Welcome <?php echo $_SESSION['sess_user']; ?></sapn>
->>>>>>> FETCH_HEAD
-				<form class="navbar-form navbar-right" role="enter">
->>>>>>> FETCH_HEAD
-			      	<button type="button" class="btn btn-success" onclick="location.href='login.php'">Sign in</button>
-			        <button type="button" class="btn btn-danger" onclick="location.href='login.php'">Sign up</button>
-	      		</form> -->
 			</div>
 		</nav>
 	</div>

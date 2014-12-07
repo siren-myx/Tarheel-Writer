@@ -3,15 +3,16 @@
 <head>
  <title>Sign Up</title>
  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
  <script type="text/javascript" src="registration.js"></script>
  <link href="./bootstrap/css/registration.css" rel="stylesheet">
 </head>
 <body>
 
  <?php
-
+echo "Hello!!";
  if(isset($_POST['submit'])){
-
+    echo "SUBMITTED!!";
   if(($_POST['password'] == $_POST['password_confirmation'])){
 
    if(!empty($_POST['email']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password_confirmation'])) {
@@ -52,16 +53,17 @@
 ?>
 
 <div class="container">
+ <form method="post" action="">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-     <form method="post" action="">
+    
       <h2>Sign Up and Write!</h2>
       <hr class="colorgraph">
       <div class="form-group">
        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
      </div>
      <div class="form-group">
-       <input type="username" name="username" id="username" class="form-control input-lg" placeholder="Username" tabindex="4">
+       <input type="text" name="username" id="username" class="form-control input-lg" placeholder="Username" tabindex="4">
      </div>
      <div class="row">
        <div class="col-xs-12 col-sm-6 col-md-6">
@@ -88,11 +90,15 @@
 </div>
 <hr class="colorgraph">
 <div class="row">
-  <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-  <div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+  <div class="col-xs-12 col-md-6">
+    <input name="submit" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+    </div>
+  <div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Sign In</a>
+  </div>
+</div>
+
 </div>
 </form>
-</div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

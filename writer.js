@@ -242,6 +242,5 @@
                 outline.appendChild(form);
                 form.appendChild(box);                
                 form.appendChild(button);
-
                 
             }

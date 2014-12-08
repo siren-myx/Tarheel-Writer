@@ -9,19 +9,13 @@ if(!isset($_SESSION["sess_user"])){
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Text Editor</title>
-    <link href="./external/google-code-prettify/prettify.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
-	   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  	<script src="./external/jquery.hotkeys.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-    <script src="./external/google-code-prettify/prettify.js"></script>
+    <meta charset="utf-8">
+    <title>Writer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css"> 
-  	<link href="./bootstrap/css/textbox.css" rel="stylesheet">
-    <script src="./bootstrap/js/bootstrap-wysiwyg.js"></script>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css">
+    <style type="text/css"></style>
   </head>
   <body id="box">
       <!-- first div starts-->

@@ -175,4 +175,11 @@ h1, h2, h3, h4 {color:#56A0D3;}
     margin-left:auto;
     margin-right: auto;
 
+
+}
+
+textarea  {  
+   font-family:"Times New Roman", Times, serif;  
+   font-size: 20px;
+   color: black;
 }

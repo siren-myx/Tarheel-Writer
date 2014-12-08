@@ -111,8 +111,21 @@
                 e.value = thesis;
                 //form -> div -> (label + input)
                 var outline = document.getElementById("outline");
+                var label2 = document.createElement("label");
+                label2.innerHTML = "Introduction: ";
+                var intro = document.createElement("input");
+                intro.id = "intro";
+                var label3 = document.createElement("label");
+                label3.innerHTML = "Outline: ";
+                var out = document.createElement("input");
+                out.id = "out";
+                
                 outline.appendChild(form);
                 form.appendChild(div);
+                div.appendChild(label2);
+                div.appendChild(intro);
+                div.appendChild(label3);
+                div.appendChild(out);
                 div.appendChild(label);
                 div.appendChild(e);
 
@@ -189,6 +202,20 @@
                     div5.appendChild(closing);
                     div5.appendChild(closingInput);
                 }
+                //conclusion paragraph
+                var div1 = document.createElement("div");
+                var div2 = document.createElement("div");
+                var div3 = document.createElement("div");
+                var div4 = document.createElement("div");
+                
+                var label1 = document.createElement("label");
+                var label2 = document.createElement("label");
+                var label3 = document.createElement("label");
+                var label4 = document.createElement("label");
+                
+                var input1 = document.createElement("input");
+                var input1 = document.createElement("input");
+                var input1 = document.createElement("input");
                 //create submit button for the form
                 var button = document.createElement("button");
                 button.innerHTML = "submit";
@@ -201,6 +228,8 @@
 
             function finish() {
                 thesis = document.getElementById("thesis").value;
+                outlines = document.getElementById("out").value;
+                introduction = document.getElementById("intro").value;
                 for (var i = 0; i < num_paragraphs; i++) {
                     transitions[i] = document.getElementById("transition" + i).value;
                     topics[i] = document.getElementById("topic" + i).value;
@@ -212,7 +241,9 @@
                 document.getElementById("description").innerHTML = "The structure is complete. Edit and copy.";
                 document.getElementById("outline").innerHTML = "";
                 //var text = document.createElement("textarea");
-                var essay = thesis + " ";
+                var essay = introduction + " ";
+                essay = outlines + " ";
+                essay = thesis + " ";
                 for (var i = 0; i < num_paragraphs; i++) {
                     essay += transitions[i] + " ";
                     essay += topics[i] + " ";

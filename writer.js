@@ -93,7 +93,7 @@
                     evidences[i] = document.getElementById("evidence" + i).value;
                 }
                 document.getElementById("header").innerHTML = "Paragraphs";
-                document.getElementById("description").innerHTML = "test";
+                document.getElementById("description").innerHTML = "Fill out each part of the paragraph";
                 document.getElementById("outline").innerHTML = "";
                 //create introduction paragraph form
                 var form = document.createElement("div");

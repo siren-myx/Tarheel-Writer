@@ -115,10 +115,12 @@
                 label2.innerHTML = "Introduction: ";
                 var intro = document.createElement("input");
                 intro.id = "intro";
+                intro.className = "form-control";
                 var label3 = document.createElement("label");
                 label3.innerHTML = "Outline: ";
                 var out = document.createElement("input");
                 out.id = "out";
+                out.className = "form-control";
                 
                 outline.appendChild(form);
                 form.appendChild(div);
@@ -218,6 +220,11 @@
                 var input3 = document.createElement("input");
                 var input4 = document.createElement("input");
                 
+                input1.className = "form-control";
+                input2.className = "form-control";
+                input3.className = "form-control";
+                input4.className = "form-control";
+                
                 input1.id ="con_introduction";
                 input2.id = "con_restatement";
                 input3.id = "con_summary";
@@ -264,10 +271,10 @@
                     closings[i] = document.getElementById("closing" + i).value;
                 }
                 
-                introductionC = document.getElementById("con_introduction");
-                restatement = document.getElementById("con_restatement");
-                summary = document.getElementById("con_summary");
-                final = document.getElementById("con_final");
+                introductionC = document.getElementById("con_introduction").value;
+                restatement = document.getElementById("con_restatement").value;
+                summary = document.getElementById("con_summary").value;
+                final = document.getElementById("con_final").value;
                 
                 document.getElementById("header").innerHTML = "Essay";
                 document.getElementById("description").innerHTML = "The structure is complete. Edit and copy.";

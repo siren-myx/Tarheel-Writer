@@ -214,8 +214,34 @@
                 var label4 = document.createElement("label");
                 
                 var input1 = document.createElement("input");
-                var input1 = document.createElement("input");
-                var input1 = document.createElement("input");
+                var input2 = document.createElement("input");
+                var input3 = document.createElement("input");
+                var input4 = document.createElement("input");
+                
+                input1.id ="con_introduction";
+                input2.id = "con_restatement";
+                input3.id = "con_summary";
+                input4.id = "con_final";
+                
+                label1.innerHTML = "Restatement of introduction";
+                label2.innerHTML = "Restatement of thesis";
+                label3.innerHTML = "Summarize essay";
+                label4.innerHTML = "Final sentence";
+                
+                div1.appendChild(label1);
+                div1.appendChild(input1);
+                div2.appendChild(label2);
+                div2.appendChild(input2);
+                div3.appendChild(label3);
+                div3.appendChild(input3);
+                div4.appendChild(label4);
+                div4.appendChild(input4);
+                
+                form.appendChild(div1);
+                form.appendChild(div2);
+                form.appendChild(div3);
+                form.appendChild(div4);
+                
                 //create submit button for the form
                 var button = document.createElement("button");
                 button.innerHTML = "submit";
@@ -237,13 +263,19 @@
                     analysis[i] = document.getElementById("analysis" + i).value;
                     closings[i] = document.getElementById("closing" + i).value;
                 }
+                
+                introductionC = document.getElementById("con_introduction");
+                restatement = document.getElementById("con_restatement");
+                summary = document.getElementById("con_summary");
+                final = document.getElementById("con_final");
+                
                 document.getElementById("header").innerHTML = "Essay";
                 document.getElementById("description").innerHTML = "The structure is complete. Edit and copy.";
                 document.getElementById("outline").innerHTML = "";
                 //var text = document.createElement("textarea");
                 var essay = introduction + " ";
-                essay = outlines + " ";
-                essay = thesis + " ";
+                essay += outlines + " ";
+                essay += thesis + " ";
                 for (var i = 0; i < num_paragraphs; i++) {
                     essay += transitions[i] + " ";
                     essay += topics[i] + " ";
@@ -251,7 +283,10 @@
                     essay += analysis[i] + " ";
                     essay += closings[i] + " ";
                 }
-
+                essay += introductionC + " ";
+                essay += restatement + " ";
+                essay += summary + " ";
+                essay += final;
                 //essay.concat() conclusion
                 //text.appendChild(essay);
                 

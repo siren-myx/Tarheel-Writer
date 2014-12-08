@@ -1,4 +1,4 @@
-var num_paragraphs;
+            var num_paragraphs;
 
             //for introduction
             var introduction;
@@ -74,7 +74,7 @@ var num_paragraphs;
                 }
                 //create submit button for the form
                 var button = document.createElement("button");
-                button.innerHTML = "submit";
+                button.innerHTML = "Next";
                 //button.type = "submit";
                 button.className = "btn btn-default";
                 button.onclick = "paragraphs()";
@@ -223,6 +223,25 @@ var num_paragraphs;
 
                 //essay.concat() conclusion
                 //text.appendChild(essay);
-                document.getElementById("outline").innerHTML = '<textarea id="essay"></textarea>';
-                document.getElementById("essay").value = essay;
+                
+                var form = document.createElement("div");                
+                var box = document.createElement("textarea");
+                var button = document.createElement("button");                
+
+                box.cols = "110";
+                box.rows = "num_paragraphs";
+                box.id = "essay";
+                box.value = essay;
+                box.className= "form-control";
+                button.className = "btn btn-success";
+                button.type = "submit";
+                button.innerHTML = "Upload";
+                button.onclick = "";
+
+                var outline = document.getElementById("outline");
+                outline.appendChild(form);
+                form.appendChild(box);                
+                form.appendChild(button);
+
+                
             }

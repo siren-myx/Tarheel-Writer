@@ -60,10 +60,14 @@ if(!isset($_SESSION["sess_user"])){
         <form method="post" action="" class="form col-md-12 center-block">
             <div id="body" class="jumbotron">
                 <div id="outline" class="row col-lg-12 input-group">
+                <div>
                 <label>Essay title:</label>
                     <input id="title" type="text" class="form-control">
-                <label>Number of body paragraphs:</label>
+                    </div>
+                <div>
+                	<label>Number of body paragraphs:</label>
                     <input id="out" type="number" class="form-control" value="3" min="1" max="10" step="1">
+                    </div>
                     <span class="input-group-addon" onclick="outline()">Next</span>
                 </div><br>
 

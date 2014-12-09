@@ -26,7 +26,8 @@
 					        <strong>Tarheel Writer</strong>	
 					        </a>
 					        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-					        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+					        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>
+					        <a href="essaysearcher.php"><img src ="./home_files/search.png" width="50px" height="auto"></a>
 					  	</span>
 				    </div>
 
@@ -75,7 +76,7 @@
 							<p>Essay Writer</p>
 						</div>	
 						<div id="essay_searcher" class="col-sm-3">
-							<a href="essaywriter.php"><img src="./home_files/search.png" width="200" height="200"></a>
+							<a href="essaysearcher.php"><img src="./home_files/search.png" width="200" height="200"></a>
 							<p>Essay Searcher</p>
 						</div>	
 					</div>						

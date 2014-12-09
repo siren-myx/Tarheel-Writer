@@ -26,7 +26,9 @@ if(!isset($_SESSION["sess_user"])){
                             <strong>Tarheel Writer</strong> 
                             </a>
 				        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-				        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
+				        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>
+                <a href="essaysearcher.php"><img src ="./home_files/search.png" width="50px" height="auto"></a>
+   
 				  	</span>
 			    </div>
 

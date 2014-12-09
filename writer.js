@@ -303,14 +303,13 @@
 
                 box.cols = "110";
                 box.rows = "num_paragraphs";
-                box.id = "essay";
+                box.id = "essaybox";
                 box.value = essay;
                 box.className= "form-control";
                 button.className = "btn btn-success";
+                button.name = "submit";
                 button.type = "submit";
                 button.innerHTML = "Upload";
-                button.onclick = "";
-
                 var outline = document.getElementById("outline");
                 outline.appendChild(form);
                 form.appendChild(box);                

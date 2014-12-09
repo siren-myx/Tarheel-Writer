@@ -3,12 +3,16 @@
 session_start();
 if(!isset($_SESSION["sess_user"])){
     header("location:login.php");
+    ("location:login.php");
 }
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
+
+
     <head>
         <meta charset="utf-8" />
         <title></title>
@@ -41,7 +45,7 @@ if(!isset($_SESSION["sess_user"])){
         </nav>
     </div>
     <!-- first div ends-->
-
+    
 
     <div class="container"><br>
         <div id="infoboard" class="jumbotron">
@@ -54,13 +58,40 @@ if(!isset($_SESSION["sess_user"])){
                 <input type="text" class="form-control" placeholder="">
             </div>
         </div>
-
+        
+        <form method="post" action="" class="form col-md-12 center-block">
         <div id="body" class="jumbotron">
             <div id="outline" class="row col-lg-12 input-group">
                 <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
                 <span class="input-group-addon" onclick="outline()">Click</span>
             </div><br>
+
+<?php
+    if (isset( $_POST['submit'] ) ) { 
+        $username = $_SESSION['sess_user'];
+        $con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67');
+        mysql_select_db('kjmoondb');
+
+        $uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
+        $row = mysql_fetch_array($uid);
+        $uid = $row[uid];
+        $text = $_POST['essay'];
+        $sql = "INSERT INTO Essays(uid, doc) VALUES ('$uid', '$text')";
+        $retval = mysql_query( $sql, $con );
+        if(! $retval ) {
+        die('Could not enter data: ' . mysql_error());
+        }
+
+        echo "Upload data successfully\n";
+    }
+?>
+
         </div>
+              
+
+        </form>
+
+
     </div>
    
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -69,3 +100,4 @@ if(!isset($_SESSION["sess_user"])){
 
     </body>
 </html>
+

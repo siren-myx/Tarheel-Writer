@@ -11,7 +11,6 @@ if(!isset($_SESSION["sess_user"])){
 
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 
 
     <head>
@@ -22,26 +21,9 @@ if(!isset($_SESSION["sess_user"])){
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css">
     </head>
-    <body>
-=======
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="writer.js"></script>
-</head>
 <body>
->>>>>>> FETCH_HEAD
 	<!-- first div starts-->
 	<div id="navigation">
-        <!-- first div starts-->
-        <div id="navigation">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">                             
@@ -60,84 +42,58 @@ if(!isset($_SESSION["sess_user"])){
                     </div>
                 </nav>
             </div>
-<<<<<<< HEAD
         </nav>
     </div>
     <!-- first div ends-->
-    
-=======
-            <!-- first div ends-->
 
-
-            <div class="container"><br>
-                <div id="infoboard" class="jumbotron">
-                    <h1 style="text-align: center" id="header">Getting Started</h1><hr>
-                    <p style="text-align: center" id="description">Select the essay type and number of body paragraphs you will use</p>
-                </div>
-                <div id="title_name" class="jumbotron">
-                    <div class="row input-group">
-                        <span class="input-group-addon">Essay Title</span>
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                </div>
->>>>>>> FETCH_HEAD
-
-                <div id="body" class="jumbotron">
-                    <div id="outline" class="row col-lg-12 input-group">
-                        <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
-                        <span class="input-group-addon" onclick="outline()">Click</span>
-                    </div><br>
+        <div class="container"><br>
+            <div id="infoboard" class="jumbotron">
+                <h1 style="text-align: center" id="header">Getting Started</h1><hr>
+                <p style="text-align: center" id="description">Select the essay type and number of body paragraphs you will use</p>
+            </div>
+            <div id="title_name" class="jumbotron">
+                <div class="row input-group">
+                    <span class="input-group-addon">Essay Title</span>
+                    <input type="text" class="form-control" placeholder="">
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-        
+    
         <form method="post" action="" class="form col-md-12 center-block">
-        <div id="body" class="jumbotron">
-            <div id="outline" class="row col-lg-12 input-group">
-                <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
-                <span class="input-group-addon" onclick="outline()">Click</span>
-            </div><br>
+            <div id="body" class="jumbotron">
+                <div id="outline" class="row col-lg-12 input-group">
+                    <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
+                    <span class="input-group-addon" onclick="outline()">Click</span>
+                </div><br>
 
-<?php
-    if (isset( $_POST['submit'] ) ) { 
-        $username = $_SESSION['sess_user'];
-        $con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67');
-        mysql_select_db('kjmoondb');
+            <?php
+                if (isset( $_POST['submit'] ) ) { 
+                    $username = $_SESSION['sess_user'];
+                    $con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67');
+                    mysql_select_db('kjmoondb');
 
-        $uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
-        $row = mysql_fetch_array($uid);
-        $uid = $row[uid];
-        $text = $_POST['essay'];
-        $sql = "INSERT INTO Essays(uid, doc) VALUES ('$uid', '$text')";
-        $retval = mysql_query( $sql, $con );
-        if(! $retval ) {
-        die('Could not enter data: ' . mysql_error());
-        }
+                    $uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
+                    $row = mysql_fetch_array($uid);
+                    $uid = $row[uid];
+                    $text = $_POST['essay'];
+                    $sql = "INSERT INTO Essays(uid, doc) VALUES ('$uid', '$text')";
+                    $retval = mysql_query( $sql, $con );
+                    if(! $retval ) {
+                die('Could not enter data: ' . mysql_error());
+                }
 
-        echo "Upload data successfully\n";
-    }
-?>
+                echo "Upload data successfully\n";
+            }
+        ?>
 
         </div>
-              
-
-        </form>
-
-
+    </form>
     </div>
    
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="writer.js"></script>
 
-    </body>
+</body>
 </html>
 
-=======
-            
 
-
-        </body>
-        </html>
->>>>>>> FETCH_HEAD

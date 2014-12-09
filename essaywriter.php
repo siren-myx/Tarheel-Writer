@@ -56,14 +56,14 @@ if(!isset($_SESSION["sess_user"])){
                 <h1 style="text-align: center" id="header">Getting Started</h1><hr>
                 <p style="text-align: center" id="description">Select the essay type and number of body paragraphs you will use</p>
             </div>
+    
+        <form method="post" action="" class="form col-md-12 center-block">
             <div id="title_name" class="jumbotron">
                 <div class="row col-lg-12 input-group">
                     <label>Essay title:</label>
                     <input id="title" type="text" class="form-control">
                 </div>
             </div>
-    
-        <form method="post" action="" class="form col-md-12 center-block">
             <div id="body" class="jumbotron">
                 <div id="outline" class="row col-lg-12 input-group">
                 <label>Number of body paragraphs:</label>

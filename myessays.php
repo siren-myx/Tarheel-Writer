@@ -82,50 +82,38 @@ if(!isset($_SESSION["sess_user"])){
 								$numrows = mysql_num_rows($query);
 
 								if($numrows > 0) {
-                                    $row = mysql_fetch_assoc($query);
+									$row = mysql_fetch_assoc($query);
 
-									/* PROBLEM: We need to figure out how to have the red delete button delete the RIGHT essay ID */
-									echo "<td>". $row['eid']."</td>";
-									echo "<td>". $row['doc']."</td>";
-									echo "<form action='' method='post'>";
-									//EDIT
-									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid']."'>
-									<span class='glyphicon glyphicon-pencil'></span></button></p></td>";
-									//DELETE
-									echo "<td><p><button class='btn btn-danger btn-xs' data-title='Delete' type='submit' name='delete".$row['eid']."' >
-									<span class='glyphicon glyphicon-trash'></span></button></p></td>
-									</tr></form>";
+									while($row = mysql_fetch_assoc($query))
+									{
 
-                                <!--while($row = mysql_fetch_assoc($query))
-                                {
-
-                                /* PROBLEM: We need to figure out how to have the red delete button delete the RIGHT essay ID */
-                                echo "<td>". $row['eid']."</td>";
-                                echo "<td>". $row['doc']."</td>";
-                                echo "<form action='' method='post'>";
+										/* PROBLEM: We need to figure out how to have the red delete button delete the RIGHT essay ID */
+										echo "<td>".$row['eid']."</td>";
+										echo "<td>".$row['doc']."</td>";
+										echo "<form action='' method='post'>";
                                 //EDIT
-                                echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid']."'>
-                                <span class='glyphicon glyphicon-pencil'></span></button></p></td>";
+										echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid']."'>
+										<span class='glyphicon glyphicon-pencil'></span></button></p></td>";
                                 //DELETE
-                                echo "<td><p><button class='btn btn-danger btn-xs' data-title='Delete' type='submit' name='delete".$row['eid']."' >
-                                <span class='glyphicon glyphicon-trash'></span></button></p></td>
+										echo "<td><p><button class='btn btn-danger btn-xs' data-title='Delete' type='submit' name='delete".$row['eid']."' >
+										<span class='glyphicon glyphicon-trash'></span></button></p></td>
 									</tr></form>";
-									}
-								} else {
-									echo "";
-								}-->
+								}
+							} else {
+								echo "";
+							}
 
-								?>
+							?>
 
-							</tbody>
+						</tbody>
 
-						</table>
-
-					</div>
+					</table>
 
 				</div>
+
 			</div>
 		</div>
+	</div>
 
 	<!--
 		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -170,7 +158,7 @@ if(!isset($_SESSION["sess_user"])){
 				</div>
 			</div>
 		</div>
-		-->
+	-->
 
-	</body>
-	</html>
+</body>
+</html>

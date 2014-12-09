@@ -1,6 +1,6 @@
 
             var num_paragraphs;
-
+            var essay;
             //for introduction
             var introduction;
             var outlines;
@@ -21,6 +21,7 @@
 
             function outline() {
                 //create introduction paragraph form
+                essay = document.getElementById("title").value;
                 num_paragraphs = document.getElementById("out").value;
                 document.getElementById("outline").innerHTML = "";
                 var form = document.createElement("div");
@@ -286,7 +287,7 @@
                 document.getElementById("description").innerHTML = "The structure is complete. Edit and copy.";
                 document.getElementById("outline").innerHTML = "";
                 //var text = document.createElement("textarea");
-                var essay = "\t";
+                essay += "\n\n\t";
                 essay += introduction + " ";
                 essay += outlines + " ";
                 essay += thesis + "\n\t";

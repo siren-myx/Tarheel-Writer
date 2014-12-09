@@ -123,8 +123,8 @@
                 out.id = "out";
                 out.className = "form-control";
                 
-                var div2 = document.createElementById("div");
-                var div3 = document.createElementById("div");
+                var div2 = document.createElement("div");
+                var div3 = document.createElement("div");
                 
                 outline.appendChild(form);
                 form.appendChild(div);

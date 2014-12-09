@@ -58,17 +58,13 @@ if(!isset($_SESSION["sess_user"])){
             </div>
     
         <form method="post" action="" class="form col-md-12 center-block">
-            <div id="title_name" class="jumbotron">
-                <div class="row col-lg-12 input-group">
-                    <label>Essay title:</label>
-                    <input id="title" type="text" class="form-control">
-                </div>
-            </div>
             <div id="body" class="jumbotron">
                 <div id="outline" class="row col-lg-12 input-group">
+                <label>Essay title:</label>
+                    <input id="title" type="text" class="form-control">
                 <label>Number of body paragraphs:</label>
                     <input id="out" type="number" class="form-control" value="3" min="1" max="10" step="1">
-                    <span class="input-group-addon" onclick="outline()">Click</span>
+                    <span class="input-group-addon" onclick="outline()">Next</span>
                 </div><br>
 
             <?php

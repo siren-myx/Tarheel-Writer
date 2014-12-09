@@ -58,8 +58,6 @@ if(!isset($_SESSION["sess_user"])){
 						<table id="mytable" class="table table-bordred table-striped">
 
 							<thead>
-
-								<th><input type="checkbox" id="checkall" /></th>
 								<th>Essay ID</th>
 								<th>Essay</th>
 								<th>Edit</th>
@@ -90,12 +88,17 @@ if(!isset($_SESSION["sess_user"])){
 									while($row = mysql_fetch_assoc($query))
 									{
 
-									echo "<tr><td><input type='checkbox' class='checkthis' /></td>";
+									/* PROBLEM: We need to figure out how to have the red delete button delete the RIGHT essay ID */
 									echo "<td>". $row['eid']."</td>";
 									echo "<td>". $row['doc']."</td>";
-									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' data-toggle='modal' data-target='#edit' ><span class='glyphicon glyphicon-pencil'></span></button></p></td>
-									<td><p><button class='btn btn-danger btn-xs' data-title='Delete' data-toggle='modal' data-target='#delete' ><span class='glyphicon glyphicon-trash'></span></button></p></td>
-									</tr>";
+									echo "<form action='' method='post'>";
+									//EDIT
+									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid'].">
+									<span class='glyphicon glyphicon-pencil'></span>/button></p></td>";
+									//DELETE
+									echo "<td><p><button class='btn btn-danger btn-xs' data-title='Delete' type='submit' name='delete".$row['eid']."' >
+									<span class='glyphicon glyphicon-trash'></span></button></p></td>
+									</tr></form>";
 									}
 								} else {
 									echo "";
@@ -114,17 +117,33 @@ if(!isset($_SESSION["sess_user"])){
 		</div>
 
 		<?php
+		function delete($)
 
-			if(isset($_POST["submit"])){
 
-				if(isset($_POST['delete'])) {
 
-				}
+
+$con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67');
+mysql_select_db('kjmoondb');
+
+$uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
+$uidRow = mysql_fetch_assoc($uid);
+
+$uid = $uidRow[uid];
+
+$sql = "DELETE FROM Essays E WHERE E.eid = '$eidToDelete' AND E.uid = '$uid'";
+
+if (mysqli_query($sql)) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+}
+
 
 
 
 		?>
 
+	<!--
 		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -143,13 +162,11 @@ if(!isset($_SESSION["sess_user"])){
 						<button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name="update"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
 					</div>
 				</div>
-				<!-- /.modal-content --> 
 			</div>
-			<!-- /.modal-dialog --> 
 		</div>
 
 
-
+	
 		<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -167,10 +184,9 @@ if(!isset($_SESSION["sess_user"])){
 						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
 					</div>
 				</div>
-				<!-- /.modal-content --> 
 			</div>
-			<!-- /.modal-dialog --> 
 		</div>
+		-->
 
 	</body>
 	</html>

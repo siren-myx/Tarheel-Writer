@@ -310,7 +310,7 @@
                 var button = document.createElement("button");                
 
                 box.cols = "110";
-                box.rows = "num_paragraphs";
+                box.rows = 20;
                 box.id = "essaybox";
                 box.name ="essaybox";
                 box.value = essay;

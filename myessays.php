@@ -82,8 +82,6 @@ if(!isset($_SESSION["sess_user"])){
 								$numrows = mysql_num_rows($query);
 
 								if($numrows > 0) {
-									$row = mysql_fetch_assoc($query);
-
 									while($row = mysql_fetch_assoc($query))
 									{
 

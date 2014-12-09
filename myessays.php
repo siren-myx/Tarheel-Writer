@@ -93,8 +93,8 @@ if(!isset($_SESSION["sess_user"])){
 									echo "<td>". $row['doc']."</td>";
 									echo "<form action='' method='post'>";
 									//EDIT
-									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid'].">
-									<span class='glyphicon glyphicon-pencil'></span>/button></p></td>";
+									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' type='submit' name='edit".$row['eid']."'>
+									<span class='glyphicon glyphicon-pencil'></span></button></p></td>";
 									//DELETE
 									echo "<td><p><button class='btn btn-danger btn-xs' data-title='Delete' type='submit' name='delete".$row['eid']."' >
 									<span class='glyphicon glyphicon-trash'></span></button></p></td>
@@ -115,33 +115,6 @@ if(!isset($_SESSION["sess_user"])){
 				</div>
 			</div>
 		</div>
-
-		<?php
-		function delete($)
-
-
-
-
-$con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67');
-mysql_select_db('kjmoondb');
-
-$uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
-$uidRow = mysql_fetch_assoc($uid);
-
-$uid = $uidRow[uid];
-
-$sql = "DELETE FROM Essays E WHERE E.eid = '$eidToDelete' AND E.uid = '$uid'";
-
-if (mysqli_query($sql)) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . mysqli_error($conn);
-}
-
-
-
-
-		?>
 
 	<!--
 		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">

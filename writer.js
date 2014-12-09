@@ -1,3 +1,4 @@
+
             var num_paragraphs;
 
             //for introduction
@@ -304,6 +305,7 @@
                 box.cols = "110";
                 box.rows = "num_paragraphs";
                 box.id = "essaybox";
+                box.name ="essaybox";
                 box.value = essay;
                 box.className= "form-control";
                 button.className = "btn btn-success";

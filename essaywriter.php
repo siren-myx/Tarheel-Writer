@@ -20,6 +20,9 @@ if(!isset($_SESSION["sess_user"])){
     	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="writer.js"></script>
     </head>
 <body>
 	<!-- first div starts-->
@@ -28,9 +31,9 @@ if(!isset($_SESSION["sess_user"])){
                 <div class="container-fluid">
                     <div class="navbar-header">                             
                         <span class="navbar-barnd">
-                            <img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
+                           <a href="index.php"><img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
                             <strong>Tarheel Writer</strong> 
-                            
+                            </a>
                             <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
                             <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>   
                         </span>
@@ -73,15 +76,19 @@ if(!isset($_SESSION["sess_user"])){
 
                     $uid = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
                     $row = mysql_fetch_array($uid);
-                    $uid = $row[uid];
-                    $text = $_POST['essay'];
-                    $sql = "INSERT INTO Essays(uid, doc) VALUES ('$uid', '$text')";
-                    $retval = mysql_query( $sql, $con );
-                    if(! $retval ) {
-                die('Could not enter data: ' . mysql_error());
-                }
 
-                echo "Upload data successfully\n";
+                    $uid = $row[uid];
+
+                    $doc = mysql_real_escape_string($_POST['essaybox']);
+                    
+                    $sql = "INSERT INTO Essays(uid, doc) VALUES ('$uid', '$doc')";
+                    $retval = mysql_query($sql);
+                    if(!$retval ) {
+                        die('Could not enter data: ' . mysql_error());
+                    } else {
+                        echo "Upload data successfully\n";
+                    }
+
             }
         ?>
 
@@ -89,9 +96,6 @@ if(!isset($_SESSION["sess_user"])){
     </form>
     </div>
    
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="writer.js"></script>
 
 </body>
 </html>

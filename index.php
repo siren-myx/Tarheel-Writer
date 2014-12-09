@@ -39,16 +39,6 @@
 			</nav>
 		</div>
 		<!-- first div ends-->
-
-		<!-- second div starts-->
-		<div id="flash">
-			<section class="full video" id="home" style="height:700px">
-					<video id="player" class="vjs-tech" preload="auto" data-setup="{}" webkit-playsinline="" 
-					style="position:absolute; width:100%;" autoplay="" src="./home_files/unc_ad.mp4" muted>
-			</video>
-			</section>
-		</div>
-		<!-- second div ends-->
 		
 		<!-- third div starts-->
 		<div id="content">
@@ -56,7 +46,9 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-	                        <div id="title" class="text-center" ><h1>Welcome to Tarheel Writer</h1></div><hr>
+	                        			<div id="title" class="text-center" >
+	                        				<h1>   </h1>
+	                        				<h1>Welcome to Tarheel Writer</h1></div><hr>
 							<div id="quotes2">
 								Tarheel Writer is a web application that targets to assist students how to write basic 3-part structured essay composed of an introduction, body(s), and conclusion. We do this by guiding the student each step of the way, teaching them what makes a great essay. In the end, we store this essay and combine their parts to create an essay they can revise and proudly show off!						
 								<br>
@@ -97,6 +89,16 @@
 			</section>		
 		</div>
 		<!-- third div starts-->
+		
+		<!-- second div starts-->
+		<div id="flash">
+			<section class="full video" id="home" style="height:700px">
+					<video id="player" class="vjs-tech" preload="auto" data-setup="{}" webkit-playsinline="" 
+					style="position:absolute; width:100%;" autoplay="" src="./home_files/unc_ad.mp4" muted>
+			</video>
+			</section>
+		</div>
+		<!-- second div ends-->
 		
 		<!-- forth div starts-->
 		<div id="footer" class="col-sm-12">

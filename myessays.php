@@ -73,7 +73,7 @@ if(!isset($_SESSION["sess_user"])){
 
 
 								$username = $_SESSION['sess_user'];
-								$uidquery = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
+								$uidquery = mysql_query("SELECT * FROM Users WHERE username= '$username'");
 								$uidrow = mysql_fetch_assoc($uidquery);
 
 								$uid = $uidrow[uid];
@@ -82,7 +82,6 @@ if(!isset($_SESSION["sess_user"])){
 								$sql = "SELECT eid, doc FROM Essays E, Users U WHERE U.uid = '$uid' AND U.uid = E.uid";		
 
 								$query = mysql_query($sql);
-
 
 								$numrows = mysql_num_rows($query);
 
@@ -114,6 +113,17 @@ if(!isset($_SESSION["sess_user"])){
 			</div>
 		</div>
 
+		<?php
+
+			if(isset($_POST["submit"])){
+
+				if(isset($_POST['delete'])) {
+
+				}
+
+
+
+		?>
 
 		<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 			<div class="modal-dialog">
@@ -130,7 +140,7 @@ if(!isset($_SESSION["sess_user"])){
 						</div>
 					</div>
 					<div class="modal-footer ">
-						<button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name=""><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+						<button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name="update"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
 					</div>
 				</div>
 				<!-- /.modal-content --> 

@@ -21,35 +21,6 @@ if(!isset($_SESSION["sess_user"])){
 
 <body>
 
-	<?php
-
-	if(isset($_POST['submit'])) {
-
-		if(!empty($_POST['search_param'])) {
-
-			
-			$con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67') or die(mysql_error());
-			mysql_select_db('kjmoondb') or die("DB Selection Failed");
-
-			$search_param = $_POST['search_param'];
-
-			$sql = "SELECT E.doc FROM Essays E, Users U WHERE U.username = '$search_param' AND U.uid = E.uid";
-			$query = mysql_query($sql);
-
-			while ($row = mysql_fetch_array($query)) {
- 				 $names[] = $row[0];
-}				
-print_r($names);
-
-		} else {
-			//Do nothing if no search parameters
-		}
-
-	}
-
-
-	?>
-
 	<!-- first div starts-->
 	<div id="navigation">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -98,6 +69,51 @@ print_r($names);
 				</div>
 			</div>
 		</div>
+
+		<?php
+
+		if(isset($_POST['submit'])) {
+
+			if(!empty($_POST['search_param'])) {
+
+
+				$con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67') or die(mysql_error());
+				mysql_select_db('kjmoondb') or die("DB Selection Failed");
+
+				$search_param = $_POST['search_param'];
+
+				$sql = "SELECT doc FROM Essays E, Users U WHERE U.username = '$search_param' AND U.uid = E.uid";
+				$query = mysql_query($sql);
+
+
+				$numrows = mysql_num_rows($query);
+
+				if($numrows > 0) {
+					echo "<table id='ResultTable' class='table table-hover'>
+					<tr>
+						<th><center>Essay</center></th>
+					</tr>";
+
+					while($row = mysql_fetch_assoc($query))
+					{
+
+						echo "<tr>";
+						echo "<td>" . $row['doc'] . "</td>";
+						echo "</tr>";
+
+					}
+					echo "</table>";
+				} else {
+					echo "";
+				}
+			} else {
+			//Do nothing if no search parameters
+			}
+
+		}
+
+
+		?>
 
 
 	</body>

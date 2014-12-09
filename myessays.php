@@ -42,13 +42,16 @@ if(!isset($_SESSION["sess_user"])){
 			</nav>
 		</div>
 		<!-- first div ends-->
-
+		<br>
+		<br>
+		<br>
+		<br>
 		<div class="container">
 			<div class="row">
 
 
 				<div class="col-md-12">
-					<h4>Bootstrap Snipp for Datatable</h4>
+					<h4>My Essays</h4>
 					<div class="table-responsive">
 
 
@@ -57,83 +60,53 @@ if(!isset($_SESSION["sess_user"])){
 							<thead>
 
 								<th><input type="checkbox" id="checkall" /></th>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Address</th>
+								<th>Essay ID</th>
+								<th>Essay</th>
 								<th>Edit</th>
 								<th>Delete</th>
 							</thead>
 							<tbody>
 
-								<tr>
-									<td><input type="checkbox" class="checkthis" /></td>
-									<td>Mohsin</td>
-									<td>Irshad</td>
-									<td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
-
-								<tr>
-									<td><input type="checkbox" class="checkthis" /></td>
-									<td>Mohsin</td>
-									<td>Irshad</td>
-									<td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
+								<?php
+								$con=mysql_connect('classroom.cs.unc.edu','kjmoon','tGmuBw7GZG7dTN67') or die(mysql_error());
+								mysql_select_db('kjmoondb') or die("DB Selection Failed");
 
 
-								<tr>
-									<td><input type="checkbox" class="checkthis" /></td>
-									<td>Mohsin</td>
-									<td>Irshad</td>
-									<td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
+								$username = $_SESSION['sess_user'];
+								$uidquery = mysql_query("SELECT * FROM Users WHERE username= '$username' ");
+								$uidrow = mysql_fetch_assoc($uidquery);
+
+								$uid = $uidrow[uid];
 
 
+								$sql = "SELECT eid, doc FROM Essays E, Users U WHERE U.uid = '$uid' AND U.uid = E.uid";		
 
-								<tr>
-									<td><input type="checkbox" class="checkthis" /></td>
-									<td>Mohsin</td>
-									<td>Irshad</td>
-									<td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
+								$query = mysql_query($sql);
 
 
+								$numrows = mysql_num_rows($query);
 
-								<tr>
-									<td><input type="checkbox" class="checkthis" /></td>
-									<td>Mohsin</td>
-									<td>Irshad</td>
-									<td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-									<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-									<td><p><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></p></td>
-								</tr>
+								if($numrows > 0) {
 
+									while($row = mysql_fetch_assoc($query))
+									{
 
+									echo "<tr><td><input type='checkbox' class='checkthis' /></td>";
+									echo "<td>". $row['eid']."</td>";
+									echo "<td>". $row['doc']."</td>";
+									echo"<td><p><button class='btn btn-primary btn-xs' data-title='Edit' data-toggle='modal' data-target='#edit' ><span class='glyphicon glyphicon-pencil'></span></button></p></td>
+									<td><p><button class='btn btn-danger btn-xs' data-title='Delete' data-toggle='modal' data-target='#delete' ><span class='glyphicon glyphicon-trash'></span></button></p></td>
+									</tr>";
+									}
+								} else {
+									echo "";
+								}
 
-
-
+								?>
 
 							</tbody>
 
 						</table>
-
-						<div class="clearfix"></div>
-						<ul class="pagination pull-right">
-							<li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-						</ul>
 
 					</div>
 
@@ -151,20 +124,13 @@ if(!isset($_SESSION["sess_user"])){
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<input class="form-control " type="text" placeholder="Mohsin">
-						</div>
-						<div class="form-group">
-
-							<input class="form-control " type="text" placeholder="Irshad">
-						</div>
-						<div class="form-group">
-							<textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+							<textarea rows="2" class="form-control" placeholder="Your Essay"></textarea>
 
 
 						</div>
 					</div>
 					<div class="modal-footer ">
-						<button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+						<button type="submit" class="btn btn-warning btn-lg" style="width: 100%;" name=""><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
 					</div>
 				</div>
 				<!-- /.modal-content --> 
@@ -187,7 +153,7 @@ if(!isset($_SESSION["sess_user"])){
 
 					</div>
 					<div class="modal-footer ">
-						<button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+						<button type="submit" name="delete" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
 					</div>
 				</div>

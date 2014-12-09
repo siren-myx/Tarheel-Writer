@@ -57,16 +57,17 @@ if(!isset($_SESSION["sess_user"])){
                 <p style="text-align: center" id="description">Select the essay type and number of body paragraphs you will use</p>
             </div>
             <div id="title_name" class="jumbotron">
-                <div class="row input-group">
-                    <span class="input-group-addon">Essay Title</span>
-                    <input type="text" class="form-control" placeholder="">
+                <div class="row col-lg-12 input-group">
+                    <label>Essay title:</label>
+                    <input id="title" type="text" class="form-control">
                 </div>
             </div>
     
         <form method="post" action="" class="form col-md-12 center-block">
             <div id="body" class="jumbotron">
                 <div id="outline" class="row col-lg-12 input-group">
-                    <input id="out" type="text" class="form-control" placeholder="# body paragraphs, ex. 4.">
+                <label>Number of body paragraphs:</label>
+                    <input id="out" type="number" class="form-control" value="3" min="1" max="10" step="1">
                     <span class="input-group-addon" onclick="outline()">Click</span>
                 </div><br>
 

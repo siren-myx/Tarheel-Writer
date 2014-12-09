@@ -25,10 +25,6 @@
 							<a href="index.php"><img src="./home_files/unc_icon.png" style="margin-top:0.6%; width:8%">
 					        <strong>Tarheel Writer</strong>	
 					        </a>
-					        <a href="styleguide.php"><img src ="./home_files/paragraph.png" width="50px" height="auto"></a>     
-					        <a href="essaywriter.php"><img src ="./home_files/write_essay.png" width="50px" height="auto"></a>
-					        <a href="essaysearcher.php"><img src ="./home_files/search.png" width="50px" height="auto"></a>
-					        <a href="myessays.php"><img src ="./home_files/1.png" width="50px" height="auto"></a>
 					  	</span>
 				    </div>
 
@@ -40,13 +36,37 @@
 		</div>
 		<!-- first div ends-->
 		
-		<!-- third div starts-->
+        <!-- third div starts-->
+			<section id="start-writing">
+				<div class="container">
+                    <div class="row"><br><br><br><br>
+						<div id="essay_guider" class="col-sm-2">
+							<a href="styleguide.php"><img src="./home_files/paragraph.png" width="100" height="100"></a>
+							<p>Essay Guider</p>
+						</div>
+						<div id="essay_writer" class="col-sm-2">
+							<a href="essaywriter.php"><img src="./home_files/write_essay.png" width="100" height="100"></a>
+							<p>Essay Writer</p>
+						</div>	
+						<div id="essay_searcher" class="col-sm-2">
+							<a href="essaysearcher.php"><img src="./home_files/search.png" width="100" height="100"></a>
+							<p>Essay Searcher</p>
+                        </div>
+
+						<div id="essay_searcher" class="col-sm-2">
+							<a href="myessays.php"><img src="./home_files/1.png" width="100" height="100"></a>
+							<p>Essay Folder</p>
+                        </div>  
+					</div>						
+				</div>
+			</section>
+
 		<div id="content">
 			<section id="introduce">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12">
-	                        			<div id="title" class="text-center" >
+						<div class="col-sm-20">
+	                        			<div id="title" style="margin-top:5%" class="text-center" >
 	                        				<h1>   </h1>
 	                        				<h1>Welcome to Tarheel Writer</h1></div><hr>
 							<div id="quotes2">
@@ -57,36 +77,7 @@
 					</div>						
 				</div>
 			</section>
-			<section id="start-writing">
-				<div class="container">
-                    <div class="row"><br><br>
-						<div id="essay_guider" class="col-sm-3">
-							<a href="styleguide.php"><img src="./home_files/paragraph.png" width="200" height="200"></a>
-							<p>Essay Guider</p>
-						</div>
-						<div id="essay_writer" class="col-sm-3">
-							<a href="essaywriter.php"><img src="./home_files/write_essay.png" width="200" height="200"></a>
-							<p>Essay Writer</p>
-						</div>	
-						<div id="essay_searcher" class="col-sm-3">
-							<a href="essaysearcher.php"><img src="./home_files/search.png" width="200" height="200"></a>
-							<p>Essay Searcher</p>
-						</div>	
-					</div>						
-				</div>
-			</section>
-			<section id="snapshot-layout">
-				<div class="container">			
-					<div class="row">
-						<div class="col-sm-12">
-							<div id="quotes">
-								<hr>&ldquo;Adding manpower to a late software project makes it later.&rdquo;  
-								&mdash; Fred Brooks<hr>
-							<br>
-						</div>
-					</div>
-				</div>
-			</section>		
+	
 		</div>
 		<!-- third div starts-->
 		
@@ -99,7 +90,19 @@
 			</section>
 		</div>
 		<!-- second div ends-->
-		
+		<div>			<section id="snapshot-layout">
+				<div class="container">			
+					<div class="row">
+						<div class="col-sm-12">
+							<div id="quotes">
+								<hr>&ldquo;Adding manpower to a late software project makes it later.&rdquo;  
+								&mdash; Fred Brooks<hr>
+							<br>
+						</div>
+					</div>
+				</div>
+            </section>	
+        </div>
 		<!-- forth div starts-->
 		<div id="footer" class="col-sm-12">
 			<a class="navbar-brand" style="margin-left:40%; color:white; font-size: 1.2em;">

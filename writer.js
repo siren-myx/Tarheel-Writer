@@ -123,14 +123,19 @@
                 out.id = "out";
                 out.className = "form-control";
                 
+                var div2 = document.createElementById("div");
+                var div3 = document.createElementById("div");
+                
                 outline.appendChild(form);
                 form.appendChild(div);
+                form.appendChild(div2);
+                form.appendChild(div3);
                 div.appendChild(label2);
                 div.appendChild(intro);
-                div.appendChild(label3);
-                div.appendChild(out);
-                div.appendChild(label);
-                div.appendChild(e);
+                div2.appendChild(label3);
+                div2.appendChild(out);
+                div3.appendChild(label);
+                div3.appendChild(e);
 
 
                 //now loop through #body paragraphs appending inputs to the form for each iteration
@@ -281,15 +286,16 @@
                 document.getElementById("description").innerHTML = "The structure is complete. Edit and copy.";
                 document.getElementById("outline").innerHTML = "";
                 //var text = document.createElement("textarea");
-                var essay = introduction + " ";
+                var essay = "\t";
+                essay += introduction + " ";
                 essay += outlines + " ";
-                essay += thesis + " ";
+                essay += thesis + "\n\t";
                 for (var i = 0; i < num_paragraphs; i++) {
                     essay += transitions[i] + " ";
                     essay += topics[i] + " ";
                     essay += evidences[i] + " ";
                     essay += analysis[i] + " ";
-                    essay += closings[i] + " ";
+                    essay += closings[i] + "\n\t";
                 }
                 essay += introductionC + " ";
                 essay += restatement + " ";

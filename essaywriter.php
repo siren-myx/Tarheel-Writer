@@ -68,7 +68,7 @@ if(!isset($_SESSION["sess_user"])){
                 	<label>Number of body paragraphs:</label>
                     <input id="out" type="number" class="form-control" value="3" min="1" max="10" step="1">
                     </div>
-                    <button class="input-group-addon" onclick="outline()">Next</button>
+                    <button onclick="outline()">Next</button>
                 </div><br>
 
             <?php
